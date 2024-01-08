@@ -23,9 +23,7 @@ which python
 Clone the repo to local path:
 
 ```python
-git clone https://github.com/ToneyGroupCU/group_page.git
-cd group_page
-git clone https://github.com/ToneyGroupCU/Comprehensive_Illustration.git
+git clone https://github.com/ToneyGroupCU/code_website.git
 ```
 
 Install requirements:
@@ -52,9 +50,4 @@ Push the project to group_page repo (after testing your build)
 git add --all
 git commit -m "updating the group_page repo"
 git push
-cd Comprehensive_Illustration
-git add --all
-git commit -m "publish site"
-git push
-cd ..
 ```
