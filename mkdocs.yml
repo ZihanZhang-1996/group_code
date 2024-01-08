@@ -2,7 +2,7 @@
 site_name: "Material Characterization"
 site_author: ""
 site_description: "Material characterization"
-site_dir: 
+site_dir: docs
 docs_dir: "dl"
 
 
