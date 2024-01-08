@@ -1,0 +1,1104 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Material characterization">
+      
+      
+      
+      <link rel="icon" href="../../assets/logo.jpg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>GIWAXS Simulation - Material Characterization</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-9XN0RGHSE1"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-9XN0RGHSE1",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-9XN0RGHSE1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#giwaxs-simulation-tool-in-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Material Characterization" class="md-header__button md-logo" aria-label="Material Characterization" data-md-component="logo">
+      
+  <img src="../../assets/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Material Characterization
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GIWAXS Simulation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        GIWAXS
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../RSoXS/Contrast_function/" class="md-tabs__link">
+        RSoXS
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Rigaku/intro/" class="md-tabs__link">
+        Rigaku
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Tools/salt/" class="md-tabs__link">
+        Tools
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Material Characterization" class="md-nav__button md-logo" aria-label="Material Characterization" data-md-component="logo">
+      
+  <img src="../../assets/logo.jpg" alt="logo">
+
+    </a>
+    Material Characterization
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          GIWAXS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GIWAXS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          GIWAXS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GIWAXS Simulation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        GIWAXS Simulation
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#diffraction-intensity" class="md-nav__link">
+    Diffraction Intensity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bragg-peaks" class="md-nav__link">
+    Bragg Peaks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GIWAXS%20Index%20tool/" class="md-nav__link">
+        GIWAXS index tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GIWAXS%20image%20tool/" class="md-nav__link">
+        GIWAXS image tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GIWAXS%20reverse%20problem/" class="md-nav__link">
+        GIWAXS reverse problem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyWAXS/" class="md-nav__link">
+        pyWAXS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cc/" class="md-nav__link">
+        Crash course on GIWAXS data analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          RSoXS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="RSoXS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          RSoXS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RSoXS/Contrast_function/" class="md-nav__link">
+        Contrast function
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Rigaku
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rigaku" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rigaku
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rigaku/intro/" class="md-nav__link">
+        Rasx to image file
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tools" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tools/salt/" class="md-nav__link">
+        Perovskite salt weight calculator
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#diffraction-intensity" class="md-nav__link">
+    Diffraction Intensity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bragg-peaks" class="md-nav__link">
+    Bragg Peaks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+  
+
+
+
+
+<h1 id="giwaxs-simulation-tool-in-python">GIWAXS Simulation tool in Python<a class="headerlink" href="#giwaxs-simulation-tool-in-python" title="Permanent link">¶</a></h1>
+<p>Zihan Zhang (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#122;&#105;&#104;&#97;&#110;&#46;&#122;&#104;&#97;&#110;&#103;&#45;&#49;&#64;&#99;&#111;&#108;&#111;&#114;&#97;&#100;&#111;&#46;&#101;&#100;&#117;">&#122;&#105;&#104;&#97;&#110;&#46;&#122;&#104;&#97;&#110;&#103;&#45;&#49;&#64;&#99;&#111;&#108;&#111;&#114;&#97;&#100;&#111;&#46;&#101;&#100;&#117;</a>)</p>
+<p>A program for 2D material diffraction simulation is introduced in this work. The sample is considered as crystallites with a Gaussian distribution in orientation in spherical coordinate (r,<span class="arithmatex">\(\theta\)</span>,<span class="arithmatex">\(\phi\)</span>). The simulated diffraction pattern is in (q<span class="arithmatex">\(_x\)</span>, q<span class="arithmatex">\(_{xy}\)</span>) plane which is designed to compare with WAXS(wide angle x-ray scattering) measurement. Thus Braggg peaks elongates in a ring pattern from their original positions in reciprocal space.</p>
+<figure>
+  <img src="../assets/ppa.png" width=600px;>
+  <figcaption>Fig 1. (a) Crystal structure of 2D perovskite; (b) GIWAXS data of PPA; (c) GIWAXS simulation of PPA.</figcaption>
+</figure>
+
+<h2 id="diffraction-intensity">Diffraction Intensity<a class="headerlink" href="#diffraction-intensity" title="Permanent link">¶</a></h2>
+<p>In reciprocal space, the Gaussian distribution in crystallites orientation results in a rotation for each Bragg peak. If we consider using an area detector to measure the diffraction intensity in q<span class="arithmatex">\(_z\)</span> q<span class="arithmatex">\(_{x}\)</span> plane. It is a summation of all Bragg peaks with each of them has the same Gaussian width(<span class="arithmatex">\(\sigma_\theta\)</span>, <span class="arithmatex">\(\sigma_\phi\)</span>) centered in (q<span class="arithmatex">\(_x\)</span>, q<span class="arithmatex">\(_y\)</span>, q<span class="arithmatex">\(_z\)</span>):</p>
+<div class="arithmatex">\[
+\begin{equation}
+    I(q_z,q_{x})=\sum_{h,k,l}|\sum_{i} f_i(\mathbf{Q}) e^{i\mathbf{Q}\cdot\mathbf{r}_n}|^2 e^{-\frac{1}{2}\frac{(\theta^I-\theta_0^B)^2}{\sigma_\theta^2}}e^{-\frac{1}{2}\frac{(\phi^I-\phi_0^B)^2}{\sigma_\phi^2}}e^{-\frac{1}{2}\frac{(q^I-q_0^B)^2}{\sigma_q^2}}
+\end{equation}
+\]</div>
+<p>where (<span class="arithmatex">\(q^I\)</span>, <span class="arithmatex">\(\theta^I\)</span>, <span class="arithmatex">\(\phi^I\)</span>) is the position of image plane(q<span class="arithmatex">\(_x\)</span>, q<span class="arithmatex">\(_z\)</span>) in spherical coordinate.</p>
+<figure>
+  <img src="../assets/polar_angles.png" width=250px;>
+  <figcaption>Fig 2. Spherical Coordinate</figcaption>
+</figure>
+
+<div class="arithmatex">\[
+\begin{equation}
+    q=\sqrt{q_z^2+q_{x}^2},\quad \theta=\frac{\pi}{2}-\arctan\frac{q_z}{|q_{x}|}, \quad
+    \phi=
+    \left\{
+    \begin{array}{cc}
+        0, \quad x&gt;0\\
+        \pi,\quad x&lt;0  
+    \end{array}
+    \right.
+\end{equation}
+\]</div>
+<p><span class="arithmatex">\(\mathbf{Q}\)</span> is the position of Bragg peaks and (hkl) is Miller index. <span class="arithmatex">\(n\)</span> indicate the atoms in the unit cell and r<span class="arithmatex">\(_n\)</span> is the real space position of <span class="arithmatex">\(n\)</span>th atom in the unit cell.</p>
+<div class="arithmatex">\[
+\begin{equation}
+    \mathbf{Q}=h\mathbf{b}_1+k\mathbf{b}_2+l\mathbf{b}_3
+\end{equation}
+\]</div>
+<p>(<span class="arithmatex">\(q_0^B\)</span>, <span class="arithmatex">\(\theta_0^B\)</span>, <span class="arithmatex">\(\phi_0^B\)</span>) is the position of Bragg peaks in reciprocal space converted to spherical coordinates:</p>
+<div class="arithmatex">\[
+\begin{equation}
+    q_0^B=|\mathbf{Q}|,\quad\theta_0^B=\arctan\frac{Q_z}{\sqrt{Q_x^2+Q_y^2}},\quad\phi_0^B=\arccos\frac{Q_y}{\sqrt{Q_x^2+Q_y^2}}
+\end{equation}
+\]</div>
+<p>It should be noticed that this is a theoretical result in (q<span class="arithmatex">\(_z\)</span>,q<span class="arithmatex">\(_x\)</span>) plane. Diffraction Ewald sphere is not considered here. Thus there is no 'missing wadge' as it always appears in GIWAXS. And a Gaussion profile in <span class="arithmatex">\(\hat{q}\)</span> direction is added to make a finite peak width in 2D image plane. In real materials the line shape in <span class="arithmatex">\(\hat{q}\)</span> is Lorentizian which depends on strain and crystallite size. </p>
+<h2 id="bragg-peaks">Bragg Peaks<a class="headerlink" href="#bragg-peaks" title="Permanent link">¶</a></h2>
+<p>Although we aim at 2D material in this proposal, a 3D crystal structure is needed to calculate the Bragg peaks. If the position of atoms is described in 2D, we need to assume a lattice constant or d-spacing in z-direction. The single crystal Bragg peaks are calculated from crystal structure file(.cif, POSCAR et. al) where lattice parameters and the positions of atoms in real space are provided. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">POSCAR File</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">Sn2</span> <span class="n">O4</span>
+<span class="mf">1.0</span>
+   <span class="mf">4.7648180450000002</span>    <span class="mf">0.0000000000000000</span>    <span class="mf">0.0000000000000003</span>
+   <span class="mf">0.0000000000000008</span>    <span class="mf">4.7648180450000002</span>    <span class="mf">0.0000000000000003</span>
+   <span class="mf">0.0000000000000000</span>    <span class="mf">0.0000000000000000</span>    <span class="mf">3.2074997700000001</span>
+<span class="n">Sn</span> <span class="n">O</span>
+<span class="mi">2</span> <span class="mi">4</span>
+<span class="n">direct</span>
+   <span class="mf">0.5000000000000000</span>    <span class="mf">0.5000000000000000</span>    <span class="mf">0.5000000000000000</span> <span class="n">Sn4</span><span class="o">+</span>
+   <span class="mf">0.0000000000000000</span>    <span class="mf">0.0000000000000000</span>    <span class="mf">0.0000000000000000</span> <span class="n">Sn4</span><span class="o">+</span>
+   <span class="mf">0.8059722950000000</span>    <span class="mf">0.1940277050000000</span>    <span class="mf">0.5000000000000000</span> <span class="n">O2</span><span class="o">-</span>
+   <span class="mf">0.1940277050000000</span>    <span class="mf">0.8059722950000000</span>    <span class="mf">0.5000000000000000</span> <span class="n">O2</span><span class="o">-</span>
+   <span class="mf">0.3059722950000000</span>    <span class="mf">0.3059722950000001</span>    <span class="mf">0.0000000000000000</span> <span class="n">O2</span><span class="o">-</span>
+   <span class="mf">0.6940277050000000</span>    <span class="mf">0.6940277050000000</span>    <span class="mf">0.0000000000000000</span> <span class="n">O2</span><span class="o">-</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>The unit vector in real and reciprocal space are defined as:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\begin{aligned}
+    \mathbf{a}_1&amp;=(a,0,0),\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\,\,\,\,\quad\quad\quad\quad    \mathbf{b}_1=\frac{2\pi}{V}\mathbf{a}_2\times\mathbf{a}_3\\ \mathbf{a}_2&amp;=(b\cos\gamma,b\sin\gamma,0),\quad\quad\quad\quad\quad\quad\,\,\,\quad\quad\quad\quad\mathbf{b}_2=\frac{2\pi}{V}\mathbf{a}_3\times\mathbf{a}_1\\
+    \mathbf{a}_3&amp;=(c\cos\beta,cn_2,c\sqrt{\sin^2\beta+n_2^2}),\quad\quad\quad\quad\quad\quad\mathbf{b}_3=\frac{2\pi}{V}\mathbf{a}_1\times\mathbf{a}_2
+\end{aligned}    
+\end{equation}
+\]</div>
+<p>where <span class="arithmatex">\((a,b,c)\)</span> and <span class="arithmatex">\((\alpha,\beta,\gamma)\)</span> are lattice constants and angles of unit cell,</p>
+<div class="arithmatex">\[
+\begin{equation}
+    n_2=\frac{\cos\alpha-\cos\beta\cos\gamma}{\sin\gamma}
+\end{equation}
+\]</div>
+<div class="arithmatex">\[
+\begin{equation}
+    V= \mathbf{a}_1\cdot(\mathbf{a}_2\times\mathbf{a}_3)
+\end{equation}
+\]</div>
+<p>We also made a rotation matrix to help adjust the sample orientation if the it is not ideally given by in the crystal structure file:</p>
+<div class="arithmatex">\[
+\begin{equation}
+    M=\left(\begin{array}{ccc}
+       \mathbf{a}_1\\
+        \mathbf{a}_2 \\
+        \mathbf{a}_3
+    \end{array}\right)=\left(\begin{array}{ccc}
+        a &amp; 0 &amp; 0\\
+        b\cos\gamma &amp; b\sin\gamma &amp; 0 \\
+        c\cos\beta &amp; c n_2 &amp; c\sqrt{\sin^2\beta+n_2^2}
+    \end{array}\right)
+\end{equation}
+\]</div>
+<div class="arithmatex">\[
+\begin{equation}
+    \hat{q},\,|\mathbf{q}|,\,\Delta E
+\end{equation}
+\]</div>
+<div class="arithmatex">\[
+\begin{equation}
+    E=\sqrt{m^2c^4+p^2c^2}
+\end{equation}
+\]</div>
+<div class="arithmatex">\[
+\begin{equation}
+    R_x(\theta)=\left(\begin{array}{ccc}
+        1 &amp; 0 &amp; 0\\
+        0 &amp; \cos\theta &amp; -\sin\theta \\
+        0 &amp; \sin\theta &amp; \cos\theta
+    \end{array}\right),\quad
+    R_y(\theta)=\left(\begin{array}{ccc}
+        \cos\theta &amp; 0 &amp; -\sin\theta\\
+        0 &amp; 1 &amp; 0 \\
+        \sin\theta &amp; 0 &amp; \cos\theta
+    \end{array}\right)
+\end{equation}
+\]</div>
+<p>Multiply Matrix M by <span class="arithmatex">\(R_x(\theta)\)</span> or <span class="arithmatex">\(R_y(\theta)\)</span> gives the rotated lattice vectors.</p>
+<p>Position of Bragg peaks with Miller index (hkl):</p>
+<div class="arithmatex">\[
+\begin{equation}
+    \mathbf{G}=h\mathbf{b}_1+k\mathbf{b}_2+l\mathbf{b}_3
+\end{equation}
+\]</div>
+<!-- 
+<figure>
+  <img src="../assets/program.png" width=400px;>
+  <figcaption>Fig 3. Workflow of this program.</figcaption>
+</figure> -->
+
+<p>Workflow of this program:
+<pre class="mermaid"><code>stateDiagram-v2
+
+    CIF --&gt; POSCAR
+    POSCAR: POSCAR 
+    POSCAR: Lattice Constants
+    POSCAR: Atom position
+    POSCAR --&gt; Bragg
+
+    Input1 --&gt; Bragg
+    Input1: Input
+    Input1: (hkl) dimensions
+    Input1: Rotation
+    Bragg: Bragg peak
+    Bragg: Bragg peak postitions in reciprocal space (3D)
+
+    Bragg --&gt; Intensity
+    Input2 --&gt; Intensity
+    Input2: Input
+    Input2: Peak Broadening parameters 
+    Input2: 2D image grid
+    Intensity --&gt; 2d
+    2d: 2d image display</code></pre></p>
+<p><a href="https://github.com/ZihanZhang-1996/2D_diffraction">Download</a> the source code.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Code</label><label for="__tabbed_2_2">Set the parameters</label><label for="__tabbed_2_3">Read CIF</label><label for="__tabbed_2_4">Simulation</label><label for="__tabbed_2_5">Plot</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">diffraction</span> <span class="k">as</span> <span class="nn">diff</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+<span class="kn">import</span> <span class="nn">time</span> <span class="k">as</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">matplotlib.widgets</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="kn">import</span> <span class="nn">scipy.io</span>
+<span class="kn">from</span> <span class="nn">matplotlib.widgets</span> <span class="kn">import</span> <span class="n">RangeSlider</span>
+<span class="kn">import</span> <span class="nn">scipy.ndimage</span> <span class="k">as</span> <span class="nn">ndimage</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patheffects</span> <span class="k">as</span> <span class="nn">path_effects</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># use thetax and thetay to adjust initial orientation of the sample</span>
+<span class="n">thetax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span>
+<span class="n">thetay</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">0</span>
+<span class="n">hkl_dimension</span><span class="o">=</span><span class="mi">10</span>
+
+<span class="c1"># sigma_theta, if you need a small number for single crystal, input~0.01, </span>
+<span class="c1"># if you need infinity, input~1000</span>
+<span class="n">sigma1</span><span class="o">=</span><span class="mf">0.02</span>
+
+<span class="c1"># sigma_phi</span>
+<span class="n">sigma2</span><span class="o">=</span><span class="mi">1000</span>
+
+<span class="c1"># sigma_r, use this to tune the peak linewidth</span>
+<span class="n">sigma3</span><span class="o">=</span><span class="mf">0.01</span>
+
+<span class="c1"># settings for imagine plane</span>
+<span class="n">resolutionx</span><span class="o">=</span><span class="mi">300</span>
+<span class="n">qxymax</span><span class="o">=</span><span class="mf">2.5</span>
+<span class="n">qzmax</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">qzmin</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="n">resolutionz</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">resolutionx</span><span class="o">/</span><span class="n">qxymax</span><span class="o">*</span><span class="n">qzmax</span><span class="p">)</span>
+<span class="n">gridx</span><span class="p">,</span><span class="n">gridz</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">qxymax</span><span class="p">,</span><span class="n">qxymax</span><span class="p">,</span><span class="n">resolutionx</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">qzmin</span><span class="p">,</span><span class="n">qzmax</span><span class="p">,</span><span class="n">resolutionz</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># read crystal structure from POSCAR</span>
+<span class="c1"># POSCAR file which can be easily converted from cif on VESTA (fractional coordinate)</span>
+<span class="n">dirr</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;MA2DMF2Pb3I8_Petrov2017&#39;</span>
+<span class="n">address</span> <span class="o">=</span> <span class="n">dirr</span> <span class="o">+</span> <span class="n">filename</span> <span class="o">+</span><span class="s1">&#39;.vasp&#39;</span>
+<span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a3</span><span class="p">,</span><span class="n">positions</span><span class="o">=</span><span class="n">diff</span><span class="o">.</span><span class="n">read_poscar</span><span class="p">(</span><span class="n">address</span><span class="p">)</span> <span class="c1"># example (graphite)</span>
+<span class="n">Bpeaks</span><span class="p">,</span><span class="n">Mqxy</span><span class="p">,</span><span class="n">Mqz</span><span class="p">,</span><span class="n">I_miller</span> <span class="o">=</span> <span class="n">diff</span><span class="o">.</span><span class="n">Braggg_peaks</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a3</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">thetax</span><span class="p">,</span><span class="n">thetay</span><span class="p">,</span><span class="n">hkl_dimension</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">t1_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+<span class="c1"># calculated GIWAXS pattern</span>
+<span class="n">III</span><span class="o">=</span><span class="n">diff</span><span class="o">.</span><span class="n">intensity</span><span class="p">(</span><span class="n">gridx</span><span class="p">,</span><span class="n">gridz</span><span class="p">,</span><span class="n">Bpeaks</span><span class="p">,</span><span class="n">sigma1</span><span class="p">,</span><span class="n">sigma2</span><span class="p">,</span><span class="n">sigma3</span><span class="p">,</span><span class="n">hkl_dimension</span><span class="p">)</span>
+<span class="n">t1_stop</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cpu time =&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t1_stop</span><span class="o">-</span><span class="n">t1_start</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code> <span class="c1"># make the plot</span>
+<span class="n">colorbar</span><span class="o">=</span><span class="mf">0.5</span>   <span class="c1"># upper limit</span>
+
+<span class="c1"># II1=np.log(III+1)</span>
+
+<span class="n">II1</span><span class="o">=</span><span class="n">III</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">II1</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span>
+               <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="n">qxymax</span><span class="p">,</span> <span class="n">qxymax</span><span class="p">,</span> <span class="n">qzmin</span><span class="p">,</span> <span class="n">qzmax</span><span class="p">],</span>
+               <span class="n">vmax</span><span class="o">=</span><span class="n">colorbar</span><span class="o">*</span><span class="n">II1</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">vmin</span><span class="o">=</span><span class="n">II1</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;q$_</span><span class="si">{xy}</span><span class="s1">$(1/A)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;q$_</span><span class="si">{z}</span><span class="s1">$(1/A)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39; GIWAXS simulation&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">([</span><span class="mi">17</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+  
+
+
+
+
+                
+
+  
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../GIWAXS%20Index%20tool/" class="md-footer__link md-footer__link--next" aria-label="Next: GIWAXS index tool" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              GIWAXS index tool
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ToneyGroupCU" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/toneygroup" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        <label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);console.log(new FormData(form)),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

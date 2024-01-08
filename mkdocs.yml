@@ -1,0 +1,135 @@
+# mkdocs.yml
+site_name: "Material Characterization"
+site_author: ""
+site_description: "Material characterization"
+site_dir: 
+docs_dir: "dl"
+
+
+theme:
+  name: "material"
+  custom_dir: theme/overrides
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  features:
+    # - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+  palette:
+    - scheme: default
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/logo.jpg
+  logo: assets/logo.jpg
+
+
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.magiclink
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: "¶"
+  - footnotes
+  - pymdownx.details
+
+
+extra_javascript:
+  # - assets/js/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+
+
+plugins:
+  - autorefs
+  - search
+  - tags:
+      tags_file: tags.md
+  - bibtex:
+      bib_dir: "dl/assets/references"
+
+extra:
+  analytics:
+    provider: google
+    property: G-9XN0RGHSE1
+    # feedback:
+    #   title: Was this page helpful?
+    #   ratings:
+    #     - icon: material/emoticon-happy-outline
+    #       name: This page was helpful
+    #       data: 1
+    #       note: >-
+    #         Thanks for your feedback!
+    #     - icon: material/emoticon-sad-outline
+    #       name: This page could be improved
+    #       data: 0
+    #       note: >-
+    #         Thanks for your feedback! Help us improve this page by
+    #         using our <a href="https://github.com/emptymalei/deep-learning/issues" target="_blank" rel="noopener">GitHub Issues or Discussions</a>.
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ToneyGroupCU
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/toneygroup
+
+
+
+nav:
+  - "Home": index.md
+  - "GIWAXS":
+    # - "Introduction": GIWAXS/intro.md
+    # - "GIWAXS experiment": GIWAXS/GIWAXS.md
+    - "GIWAXS Simulation": GIWAXS/GIWAXS Simulation.md
+    - "GIWAXS index tool": GIWAXS/GIWAXS Index tool.md
+    - "GIWAXS image tool": GIWAXS/GIWAXS image tool.md
+    - "GIWAXS reverse problem": GIWAXS/GIWAXS reverse problem.md
+    - "pyWAXS": GIWAXS/pyWAXS.md
+    - "Crash course on GIWAXS data analysis": GIWAXS/cc.md
+  - "RSoXS":
+    - "Contrast function": RSoXS/Contrast_function.md
+  - "Rigaku":
+    - "Rasx to image file": Rigaku/intro.md
+  - "Tools":
+    - "Perovskite salt weight calculator": Tools/salt.md
